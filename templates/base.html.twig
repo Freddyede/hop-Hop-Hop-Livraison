@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
         <link rel="stylesheet" href="{{asset('assets/styles/property.css')}}" />
         <script src="https://kit.fontawesome.com/35c69bda3a.js" crossorigin="anonymous"></script>
+        <script src="{{asset('assets/scripts/inputs.js') }}"></script>
     </head>
     <body>
         {% include 'composants/navbar.html.twig' %}
@@ -68,13 +69,55 @@
         </div>
         <!-- /Highlights -->
         <!-- Intro -->
-        <div class="container text-center">
-            <br> <br>
-            <h2 class="thin">The best place to tell people why they are here</h2>
-            <p class="text-muted">
-                The difference between involvement and commitment is like an eggs-and-ham breakfast:<br> 
-                the chicken was involved; the pig was committed.
+        <div class="container text-center" id="planning">
+            <br>
+            <br>
+            <p class="font-italic font-bold mb">
+                Pour une livraison à domicile merci de remplir le formulaire ci-dessous
             </p>
+            <form action="" method="" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="font-bold mt">Nom réceptionneur.se :</p>
+                    </div>
+                    <div class="form-group col-sm-6 mb">
+                        <input type="text" class="form-control text-center" name="nom" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="font-bold mt">Prénom réceptionneur.se :</p>
+                    </div>
+                    <div class="form-group col-sm-6 mb">
+                        <input type="text" class="form-control text-center" name="prenom" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="font-bold mt">Habitez-vous en :</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <select class="form-control text-center col-md-6" name="locationHabitation">
+                            <option value="">--Choisissez une valeur--</option>
+                            <option value="Maison">Maison</option>
+                            <option value="Appartement">Appartement</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                     <div class="col-sm-6">
+                        <p class="font-bold mt">Communes :</p>
+                    </div>
+                    <div class="form-group col-sm-6 mb">
+                        <input type="text" class="form-control text-center" id="city" name="citys" />
+                    </div>
+                    <p class="font-bold col-sm-6">Numéro de téléphone réceptionneur.se :</p>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control text-center" min='0' name="phone" id="phone" maxlength="10" />
+                    </div>
+                </div>
+                <br>
+                <p class="font-italic font-bold mb">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin</p>
+                
+                <button onclick="verificationNumber()" class="btn btn-success">Envoyer</button>
+            </form>
         </div>
         <!-- /Intro-->
         <!-- Social links. @TODO: replace by link/instructions in template -->
@@ -97,13 +140,12 @@
             <div class="footer1">
                 <div class="container">
                     <div class="row">                        
-                        <div class="col-md-6 text-center widget">
+                        <div class="col-md-6 text-center widget" id="contact">
                             <h3 class="widget-title">Contact</h3>
                             <div class="widget-body">
                                 <p><i class="fas fa-phone-alt"></i> : 07 66 63 80 02<br>
                                     <i class="fas fa-envelope"></i> : <a href="mailto:#frederic.patouillard@outlook.fr">frederic.patouillard@outlook.fr</a><br>
-                                    <br>
-                                    <i class="fas fa-map-marker-alt"></i> : 234 Hidden Pond Road, Ashland City, TN 37015
+                                    <i class="fas fa-map-marker-alt"></i> : 39 Avenue de l'Europe (69320 - Feyzin)
                                 </p>	
                             </div>
                         </div>
@@ -130,11 +172,11 @@
                         <div class="col-md-6 widget">
                             <div class="widget-body">
                                 <p class="simplenav">
-                                    <a href="#">Home</a> | 
-                                    <a href="about.html">About</a> |
-                                    <a href="sidebar-right.html">Sidebar</a> |
-                                    <a href="contact.html">Contact</a> |
-                                    <b><a href="signup.html">Sign up</a></b>
+                                    <a href="/">Home</a> | 
+                                    <a href="#about">About</a> | 
+                                    <a hretemplatef="#provider">Fournisseurs</a> |
+                                    <a href="#planning">Planning</a> |
+                                    <a href="#contact">Contact</a>
                                 </p>
                             </div>
                         </div>
@@ -148,12 +190,13 @@
                     </div> <!-- /row of widgets -->
                 </div>
             </div>
-        </footer>	
+        </footer>
         <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="{{asset('assets/js/headroom.min.js') }}"></script>
         <script src="{{asset('assets/js/jQuery.headroom.min.js') }}"></script>
         <script src="{{asset('assets/js/template.js') }}"></script>
+        <script src="{{asset('assets/scripts/autocomplete.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

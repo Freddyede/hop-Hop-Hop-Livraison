@@ -4,4 +4,34 @@
 .text-area{
     width: 300px;
 }
-  
+
+.font-italic{
+    font-style: italic;
+}
+.font-bold{
+    font-weight: bold;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number]  {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.text-center{
+    text-align-last:center;
+}
+option {
+    text-align:center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.mt{
+    margin-top: 2%;
+}
+.mb{
+    margin-bottom: 2%;
+}
