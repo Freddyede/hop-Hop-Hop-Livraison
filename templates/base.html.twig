@@ -7,11 +7,13 @@
         <meta name="description" content="" />
         <meta name="author" content="Sergey Pozhilov (GetTemplate.com)" />
         <title>Progressus - Free business bootstrap template by GetTemplate</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="shortcut icon" 
             href="{{ asset('assets/images/logo.png') }}" />
         <script type="text/javascript" 
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
         </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script
             src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
             integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
@@ -27,7 +29,12 @@
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
         <link rel="stylesheet" href="{{asset('assets/styles/property.css')}}" />
         <script src="https://kit.fontawesome.com/35c69bda3a.js" crossorigin="anonymous"></script>
-        <script src="{{asset('assets/scripts/inputs.js') }}"></script>
+        <script src="{{ asset('assets/scripts/inputs.js') }}"></script>
+        <script src="{{ asset('assets/scripts/screen.js') }}"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
         {% include 'composants/navbar.html.twig' %}
@@ -108,18 +115,22 @@
                     <div class="form-group col-sm-6 mb">
                         <input type="text" class="form-control text-center" id="city" name="citys" />
                     </div>
-                    <p class="font-bold col-sm-6">Numéro de téléphone réceptionneur.se :</p>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control text-center" min='0' name="phone" id="phone" maxlength="10" />
+                        <p class="font-bold mt">Numéro de téléphone réceptionneur.se :</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" required="false" class="form-control text-center" min='0' name="phone" id="phone" maxlength="10" />
                     </div>
                 </div>
                 <br>
                 <p class="font-italic font-bold mb">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin</p>
-                
                 <button onclick="verificationNumber()" class="btn btn-success">Envoyer</button>
             </form>
         </div>
         <!-- /Intro-->
+        <!-- Modal-->
+        {% include 'composants/modal.html.twig' %}
+        <!-- /Modal-->
         <!-- Social links. @TODO: replace by link/instructions in template -->
         <section id="social">
             <div class="container">

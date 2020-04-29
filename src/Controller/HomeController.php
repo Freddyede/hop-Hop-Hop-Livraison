@@ -30,10 +30,7 @@ class HomeController extends AbstractController
         $citys = $this->getDoctrine()->getRepository(Villes::class)->findAll();
         foreach($citys as $city){
             $data_encoder[] = [
-                'villes'=>$city->getName().' '.$city->getCodePostal(),
-                'background'=>$city->getZone()->getBackground(),
-                'color'=>$city->getZone()->getColors(),
-                'zone'=>$city->getZone()->getName()
+                'villes'=>$city->getName().' '.$city->getCodePostal().' '.'('.$city->getZone()->getName().')'
             ];
         }
     return new Response(json_encode($data_encoder));

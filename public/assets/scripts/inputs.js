@@ -1,18 +1,9 @@
 function verificationNumber(){
-    var inputNumber = $("#phone").val();
-    var regex = /[0-9]{10}/;
-    if(regex.test(inputNumber)){
-        alert("true");
+    var regex = /^(0[1-68])(?:[ _.-]?(\d{2})){4}$/;
+    if(regex.test($("#phone").val())){
+        $("#phone").removeClass("error");
+        $("#myModal").modal("show");
     }else{
-        alert("false");
+        $("#phone").addClass("error");
     }
 }
-
-$(document).ready(function(){
-    $('a#links').click(function() {
-        return $('div.navbar-collapse.collapse').hide(1000);
-    });
-    $('button.navbar-toggle').click(function(){
-        return $('div.navbar-collapse.collapse').toggle(1000);
-    });
-})

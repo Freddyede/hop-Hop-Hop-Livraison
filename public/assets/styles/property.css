@@ -35,3 +35,14 @@ option {
 .mb{
     margin-bottom: 2%;
 }
+
+#ui-id-1{
+    height:200px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.error{
+    background-color: #F00 !important;
+    color:#FFF !important;
+}
