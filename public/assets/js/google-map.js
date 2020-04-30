@@ -1,116 +1,62 @@
-google.maps.event.addDomListener(window, 'load', init);
 
-var map;
+var google;
 
 function init() {
-	var mapOptions = {
-		center: new google.maps.LatLng(29.7063428,-95.40526,17),
-		zoom: 17,
-		zoomControl: true,
-		zoomControlOptions: {
-			style: google.maps.ZoomControlStyle.SMALL,
-		},
-		disableDoubleClickZoom: true,
-		mapTypeControl: true,
-		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-		},
-		scaleControl: false,
-		scrollwheel: true,
-		streetViewControl: true,
-		draggable : true,
-		overviewMapControl: false,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		styles: [
-		{
-			featureType: "landscape",
-			stylers: [
-			{ saturation: -100 },
-			{ lightness: 65 },
-			{ visibility: "on" }
-			]
-		},{
-			featureType: "poi",
-			stylers: [
-			{ saturation: -100 },
-			{ lightness: 51 },
-			{ visibility: "simplified" }
-			]
-		},{
-			featureType: "road.highway",
-			stylers: [
-			{ saturation: -100 },
-			{ visibility: "simplified" }
-			]
-		},{
-			featureType: "road.arterial",
-			stylers: [
-			{ saturation: -100 },
-			{ lightness: 30 },
-			{ visibility: "on" }
-			]
-		},{
-			featureType: "road.local",
-			stylers: [
-			{ saturation: -100 },
-			{ lightness: 40 },
-			{ visibility: "on" }
-			]
-		},{
-			featureType: "transit",
-			stylers: [
-			{ saturation: -100 },
-			{ visibility: "simplified" }
-			]
-		},{
-			featureType: "administrative.province",
-			stylers: [
-			{ visibility: "off" }
-			]
-	/** /
-		},{
-			featureType: "administrative.locality",
-			stylers: [
-				{ visibility: "off" }
-			]
-		},{
-			featureType: "administrative.neighborhood",
-			stylers: [
-				{ visibility: "on" }
-			]
-			/**/
-		},{
-			featureType: "water",
-			elementType: "labels",
-			stylers: [
-			{ visibility: "on" },
-			{ lightness: -25 },
-			{ saturation: -100 }
-			]
-		},{
-			featureType: "water",
-			elementType: "geometry",
-			stylers: [
-			{ hue: "#ffff00" },
-			{ lightness: -25 },
-			{ saturation: -97 }
-			]
-		}
-		],
-		
-	}
+    // Basic options for a simple Google Map
+    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
+    var myLatlng = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+    // 39.399872
+    // -8.224454
+    
+    var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 7,
 
-	var mapElement = document.getElementById('map');
-	var map = new google.maps.Map(mapElement, mapOptions);
-	var locations = [
-	
-	];
+        // The latitude and longitude to center the map (always required)
+        center: myLatlng,
 
-	for (i = 0; i < locations.length; i++) {
-		marker = new google.maps.Marker({
-			icon: '',
-			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-			map: map
-		});
-	}
+        // How you would like to style the map. 
+        scrollwheel: false,
+        styles: [
+            {
+                "featureType": "administrative.country",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    },
+                    {
+                        "hue": "#ff0000"
+                    }
+                ]
+            }
+        ]
+    };
+
+    
+
+    // Get the HTML DOM element that will contain your map 
+    // We are using a div with id="map" seen below in the <body>
+    var mapElement = document.getElementById('map');
+
+    // Create the Google Map using out element and options defined above
+    var map = new google.maps.Map(mapElement, mapOptions);
+    
+    var addresses = ['New York'];
+
+    for (var x = 0; x < addresses.length; x++) {
+        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+            var p = data.results[0].geometry.location
+            var latlng = new google.maps.LatLng(p.lat, p.lng);
+            new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: 'images/loc.png'
+            });
+
+        });
+    }
+    
 }
+google.maps.event.addDomListener(window, 'load', init);
