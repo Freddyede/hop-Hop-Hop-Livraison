@@ -46,3 +46,33 @@ option {
     background-color: #F00 !important;
     color:#FFF !important;
 }
+
+.header{
+    background-color: #585858 !important;
+    position:relative;
+    top:0;
+}
+
+#ftco-nav{
+    border:1px solid red !important;
+}
+
+.text-flex{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.btn-client{
+    background-color: transparent !important;
+}
+
+.text-white:hover{
+    border-color: #FF7F00 !important;
+}
+
+.text-white-link{
+    color:#FFF !important;
+}
+.text-white:hover>.text-white-link{
+    color:#FF7F00 !important;
+}
