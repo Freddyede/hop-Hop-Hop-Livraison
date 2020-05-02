@@ -18,31 +18,11 @@ input[type=number]  {
   -moz-appearance: textfield;
   margin: 0;
 }
-.text-center{
-    text-align-last:center;
-}
-option {
-    text-align:center;
+#headerwrap{
+    background-image: url(../img/background.jpg) no-repeat;
+    background-size: cover;
 }
 
-.text-right{
-    text-align: right;
-}
-
-.mt{
-    margin-top: 2%;
-}
-.mb{
-    margin-bottom: 2%;
-}
-
-#ui-id-1{
-    height:200px;
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-.error{
-    background-color: #F00 !important;
-    color:#FFF !important;
+#navbar{
+    background-color: #585858;
 }
