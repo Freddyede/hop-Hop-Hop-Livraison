@@ -31,7 +31,7 @@ if(menu.length){
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"
   // });
-  
+
 // for filter
   // init Isotope
   var $grid = $('.grid').isotope({
