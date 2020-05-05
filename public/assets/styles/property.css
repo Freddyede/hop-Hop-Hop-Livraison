@@ -118,3 +118,14 @@ input[type=number]  {
 .dropdown-toggle, .side-menu-trigger, .search-bar{
     color:#FF7F00 !important;
 }
+
+.btn-orange {
+    background-color: #ff9900 !important;
+    color:#fff !important;
+}
+
+.containerWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
