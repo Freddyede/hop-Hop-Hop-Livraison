@@ -3,31 +3,28 @@
         <div class="header_bottom_border">
             <div class="row align-items-center">
                 <div class="col-md-1 text-center">
-                    <h1 class="text-orange">
-                        HHHL
-                    </h1>
+                    <a href="{{path('home')}}">
+                        <h1 class="text-orange">
+                            HHHL
+                        </h1>
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <div class="main-menu  d-none d-lg-block">
                         <nav>
                             <ul id="navigation">
-                                <li><a class="active" href="#">Présentation</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="service.html">Services</a></li>
-                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="single-blog.html">single-blog</a></li>
-                                    </ul>
+                                <li>
+                                    <a role="menuitem" href="{{path('home')}}">Présentation</a>
                                 </li>
-                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                    <ul class="submenu">
-                                            <li><a href="elements.html">elements</a></li>
-                                        <li><a href="Portfolio.html">Portfolio</a></li>
-                                        <li><a href="portfolio_details.html">Portfolio details</a></li>
-                                    </ul>
+                                <li>
+                                    <a role="menuitem" href="about.html">Transports</a>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li>
+                                    <a role="menuitem" href="service.html">Services</a>
+                                </li>
+                                <li>
+                                    <a role="menuitem" href="{{ path('contact') }}">Contact</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
