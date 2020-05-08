@@ -20,6 +20,7 @@ class HomeController extends AbstractController
         }
         return $this->render('base.html.twig', [
             'controller_name' => 'HomeController',
+            'activePresentations'=>true
         ]);
     }
     /**

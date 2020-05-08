@@ -118,3 +118,128 @@ input[type=number]  {
 .dropdown-toggle, .side-menu-trigger, .search-bar{
     color:#FF7F00 !important;
 }
+
+.btn-orange {
+    background-color: #ff9900 !important;
+    color:#fff !important;
+}
+
+.containerWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a#contacts{
+    cursor: pointer;
+}
+div#contacts{
+    background-color: #585858;
+    color:#ff9900;
+}
+
+#presentations, #contact{
+    background-color: #6E6E6E;
+}
+
+.text-presentations{
+    font-size:1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text-presentation, .text-contact{
+    color:#048b9a;
+    text-shadow: 1px 1px 1px #000;
+}
+
+h2.text-presentation, h2.text-contact{
+    text-decoration: underline;
+}
+
+.text-under{
+    text-decoration: underline;
+}
+
+/***    MEDIA QUERIES    ***/
+
+/*
+    * Style media query pour écran < 359px (all small phones (iphone 5SE and others) )
+*/
+@media only screen and (max-width : 359px) {
+    /* Styles pour cette Media Queries */
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }    
+    .text-presentations{
+        font-size:1rem;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+/*
+    * Style media query pour 359px < écran < 361px (all phones)
+*/
+@media only screen and (min-width : 359px) and (max-width:361px){
+    /* Styles pour cette Media Queries */
+    #presentations, #contact{
+        background-color: #6E6E6E;
+    }
+    
+    .text-presentations{
+        font-size:1rem;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+
+/*
+    * Style media query pour 362px < écran < 768px (all Ipad)
+*/
+@media only screen and (min-width : 362px) and (max-width:768px){
+    /* Styles pour cette Media Queries */
+    #presentations, #contact{
+        background-color: #6E6E6E;
+    }
+    
+    .text-presentations{
+        font-size:1rem;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+
+/*
+    * Style media query pour 769px < écran < 834px (all Ipad)
+*/
+
+@media only screen and (min-width : 769px) and (max-width:834px){
+    /* Styles pour cette Media Queries */
+    #presentations, #contact{
+        background-color: #6E6E6E;
+    }
+    
+    .text-presentations{
+        font-size:1rem;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+/*
+    * Style media query pour 835px < écran < 1024px (all phones)
+*/
+@media only screen and (min-width : 835px) and (max-width:1024px){
+    /* Styles pour cette Media Queries */
+    #presentations, #contact{
+        background-color: #6E6E6E;
+    }
+    
+    .text-presentations{
+        font-size:1rem;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}

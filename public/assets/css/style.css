@@ -708,12 +708,12 @@ h3 {
 /* line 28, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
-  color: #28AE60;
+  color: #ff9900;
 }
 
 /* line 32, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav a.active {
-  color: #28AE60;
+  color: #ff9900;
 }
 
 @media (max-width: 767px) {
@@ -980,9 +980,9 @@ h3 {
 
 /* line 119, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .main-header-area .Appointment .book_btn a:hover {
-  background: #28AE60;
+  background: #ff5e13;
   color: #fff;
-  border: 1px solid #28AE60;
+  border: 1px solid #ff9900;
 }
 
 /* line 127, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
@@ -1058,7 +1058,7 @@ h3 {
 
 /* line 191, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #28AE60;
+  color: #ff9900;
 }
 
 /* line 195, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
@@ -1186,7 +1186,7 @@ h3 {
 
 /* line 290, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .header-top_area .social_media_links a:hover {
-  color: #28AE60;
+  color: #ff9900;
 }
 
 /* line 295, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
@@ -2758,8 +2758,8 @@ h3 {
 
 /* line 63, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget p.footer_text.doanar a:hover {
-  color: #28AE60;
-  border-bottom: 1px solid #28AE60;
+  color: #ff9900;
+  border-bottom: 1px solid #ff9900;
 }
 
 /* line 67, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
@@ -2781,7 +2781,7 @@ h3 {
 
 /* line 81, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget ul li a:hover {
-  color: #28AE60;
+  color: #ff9900;
 }
 
 /* line 87, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
@@ -2897,7 +2897,7 @@ h3 {
 /* line 164, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
 .footer .socail_links ul li a:hover {
   color: #fff !important;
-  background: #28AE60;
+  background: #ff9900;
 }
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_bradcam.scss */

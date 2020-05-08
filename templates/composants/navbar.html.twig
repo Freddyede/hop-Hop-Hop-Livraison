@@ -1,34 +1,47 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  fixed-top ftco-navbar-light header" id="ftco-navbar navbar">
+<div id="sticky-header" class="main-header-area">
     <div class="container">
-        <div class="col-md-6" style="border:1px solid red;">
-            <a class="navbar-brand text-orange" href="index.html">
-                Hop Hop Hop Livraison
-            </a>
+        <div class="header_bottom_border">
+            <div class="row align-items-center">
+                <div class="col-md-1 text-center">
+                    <a href="{{path('home')}}">
+                        <h1 class="text-orange">
+                            HHHL
+                        </h1>
+                    </a>
+                </div>
+                <div class="col-md-10">
+                    <div class="main-menu  d-none d-lg-block">
+                        <nav>
+                            <ul id="navigation">
+                                <li>
+                                    <a role="menuitem" href="{{path('home')}}">Présentation</a>
+                                </li>
+                                <li>
+                                    <a role="menuitem" href="about.html">Transports</a>
+                                </li>
+                                <li>
+                                    <a role="menuitem" href="service.html">Services</a>
+                                </li>
+                                <li>
+                                    <a role="menuitem" href="{{ path('contact') }}">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-1 d-none d-lg-block">
+                    <div class="Appointment">
+                        <div class="search_button">
+                            <a href="#">
+                                <i class="ti-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 text-flex">
-            <div class="btn btn-outline-white btn-client text-white">
-                <i class="fas fa-user text-white-link"></i>
-                <a class="btn btn-client text-white-link" href="07">
-                    Espace client
-                </a>
-            </div>
-            <div class="btn bg-orange">
-                <a class="btn bg-orange text-white" href="#">
-                    Demandez un devis
-                </a>
-            </div>
-            <div class="btn bg-white">
-                <i class="fas fa-phone-alt"></i>
-                <a class="btn bg-white" href="0766638002">
-                    07 66 63 80 02
-                </a>
-            </div>
-        </div>
-        <button class="navbar-toggler"
-            type="button" data-toggle="collapse"
-            data-target="#ftco-nav" aria-controls="ftco-nav"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
     </div>
-</nav>
+</div>
