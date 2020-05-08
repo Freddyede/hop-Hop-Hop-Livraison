@@ -1,206 +1,211 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>busicol</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>busicol</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="manifest" href="site.webmanifest"> -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
+        <!-- Place favicon.ico in the root directory -->
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
-    <!-- Place favicon.ico in the root directory -->
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/gijgo.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/slicknav.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://kit.fontawesome.com/35c69bda3a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ asset('assets/styles/property.css') }}">
+        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    </head>
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/gijgo.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/styles/property.css') }}">
-    <script src="https://kit.fontawesome.com/35c69bda3a.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-</head>
+    <body>
+        <!--[if lte IE 9]>
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+            <![endif]-->
 
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <!-- header-start -->
+        <header>
+            <div class="header-area">
+                {% include 'composants/informations.html.twig'%}
+                {% include 'composants/navbar.html.twig'%}
+                <div class="container">
+                    {% block contentTitle %}
+                        {% if activePresentations %}
+                            <div class="row" id="presentations">
+                                <div class="col-10 offset-1">
+                                    <h2 class="text-presentation text-center">
+                                        <ins>
+                                            Présentations Entreprise :
+                                        </ins>
+                                    </h2>
+                                    <p class="text-presentation text-center text-presentations">
+                                        Hop ! Hop ! Hop ! Livraison est, comme son nom l'indique, une société de
+                                        livraison fondée en Août 2019. Notre entreprise familiale propose différents
+                                        services grâce à sa flotte élargie de véhicules légers allant de la voiture au
+                                        camion d'une capacité de 20 m&sup3;. La qualité des services et les prestations sont
+                                        nos principales préoccupations. La prise de rendez-vous rapide et efficace, le
+                                        délai de livraison le plus court possible et le contact courtois avec le client font
+                                        également parties de nos priorités. Nous allons vous faire changer la vision de
+                                        notre métier basé sur l'échange et le service.
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
 
-    <!-- header-start -->
-    <header>
-        <div class="header-area">
-            {% include 'composants/informations.html.twig'%}
-            {% include 'composants/navbar.html.twig'%}
-            <div class="container">
-                {% block contentTitle %}
-                    {% if activePresentations %}
-                        <div class="row" id="presentations">
-                            <div class="col-10 offset-1">
-                                <h2 class="text-presentation text-center">
-                                    <ins>
-                                        Présentations Entreprise :
-                                    </ins>
-                                </h2>
-                                <p class="text-presentation text-center text-presentations">
-                                    Hop ! Hop ! Hop ! Livraison est, comme son nom l'indique, une société de
-                                    livraison fondée en Août 2019. Notre entreprise familiale propose différents
-                                    services grâce à sa flotte élargie de véhicules légers allant de la voiture au
-                                    camion d'une capacité de 20 m&sup3;. La qualité des services et les prestations sont
-                                    nos principales préoccupations. La prise de rendez-vous rapide et efficace, le
-                                    délai de livraison le plus court possible et le contact courtois avec le client font
-                                    également parties de nos priorités. Nous allons vous faire changer la vision de
-                                    notre métier basé sur l'échange et le service.
+        <!-- slider_area_start -->
+        <div class="slider_area" id="headerwrap">
+            <div class="col-xs-12">
+                <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+                </div>
+            </div>
+        </div>
+        <!-- slider_area_end -->
+        <div class="container">
+            {% block contentBody %}
+            {% endblock %}
+        </div>
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <img src="{{asset('assets/img/footer_logo.png')}}" alt="">
+                                    </a>
+                                </div>
+                                <p>
+                                    Firmament morning sixth subdue darkness
+                                    creeping gathered divide.
                                 </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
-                    {% endif %}
-                {% endblock %}
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
-
-    <!-- slider_area_start -->
-    <div class="slider_area" id="headerwrap">
-        <div class="col-xs-12">
-            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-    {% block contentBody %}
-    {% endblock %}
-    <!-- footer start -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="{{asset('assets/img/footer_logo.png')}}" alt="">
-                                </a>
-                            </div>
-                            <p>
-                                Firmament morning sixth subdue darkness
-                                creeping gathered divide.
-                            </p>
-                            <div class="socail_links">
+                        <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Services
+                                </h3>
                                 <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">Development</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="#">Consulting</a></li>
+                                    <li><a href="#">Finance</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Useful Links
+                                </h3>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#"> Contact</a></li>
+                                    <li><a href="#"> Free quote</a></li>
                                 </ul>
                             </div>
-
                         </div>
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                    Services
-                            </h3>
-                            <ul>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Marketing</a></li>
-                                <li><a href="#">Consulting</a></li>
-                                <li><a href="#">Finance</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                    Useful Links
-                            </h3>
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#"> Contact</a></li>
-                                <li><a href="#"> Free quote</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Address
-                            </h3>
-                            <ul>
-                                    <li>200, D-block, Green lane USA</li>
-                                    <li>+10 367 467 8934</li>
-                                    <li><a href="#"> docmed@contact.com</a></li>
-                                </ul>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Address
+                                </h3>
+                                <ul>
+                                        <li>200, D-block, Green lane USA</li>
+                                        <li>+10 367 467 8934</li>
+                                        <li><a href="#"> docmed@contact.com</a></li>
+                                    </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> &copy;, All rights reserved | by <a href="#" target="_blank">Hop Hop Hop Livraison</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <p class="copy_right text-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> &copy;, All rights reserved | by <a href="#" target="_blank">Hop Hop Hop Livraison</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!--/ footer end  -->
-    <!-- JS here -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scrollIt.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('assets/js/gijgo.min.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.form.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('assets/js/mail-script.js') }}"></script>
-    <script src="{{asset('assets/js/main.js')}}"></script>
-</body>
+        </footer>
+        <!--/ footer end  -->
+        <!-- JS here -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
+        <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/scrollIt.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
+        <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+        <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins.js') }}"></script>
+        <script src="{{ asset('assets/js/gijgo.min.js') }}"></script>
+        <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.form.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('assets/js/mail-script.js') }}"></script>
+        <script src="{{asset('assets/js/main.js')}}"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="{{asset('assets/scripts/autocomplete.js')}}"></script>
+        <script src="{{asset('assets/scripts/inputs.js')}}"></script>
+    </body>
 </html>

@@ -11,6 +11,11 @@
 .font-bold{
     font-weight: bold;
 }
+.error{
+    background-color: #F00 !important;
+    color:#FFF !important;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button,
 input[type=number]  {
@@ -158,6 +163,12 @@ h2.text-presentation, h2.text-contact{
     text-decoration: underline;
 }
 
+/**     CONTAINER TITLE **/
+
+.containerTitle{
+    margin-top: 30%;
+}
+
 /***    MEDIA QUERIES    ***/
 
 /*
@@ -169,7 +180,11 @@ h2.text-presentation, h2.text-contact{
         height:458px;
         overflow: hidden;
         overflow-y: scroll;
-    }    
+    }
+
+    .containerTitle{
+        margin-top: 30%;
+    }
     .text-presentations{
         font-size:1rem;
         font-weight: bold;
@@ -186,6 +201,10 @@ h2.text-presentation, h2.text-contact{
         background-color: #6E6E6E;
     }
     
+    .containerTitle{
+        margin-top: 50%;
+    }
+
     .text-presentations{
         font-size:1rem;
         font-weight: bold;
@@ -201,6 +220,14 @@ h2.text-presentation, h2.text-contact{
     /* Styles pour cette Media Queries */
     #presentations, #contact{
         background-color: #6E6E6E;
+    }
+
+    .containerTitle{
+        margin-top: 40%;
+    }
+
+    .containerTitle{
+        margin-top: 50%;
     }
     
     .text-presentations{
@@ -221,6 +248,10 @@ h2.text-presentation, h2.text-contact{
         background-color: #6E6E6E;
     }
     
+    .containerTitle{
+        margin-top: 40%;
+    }
+
     .text-presentations{
         font-size:1rem;
         font-weight: bold;
@@ -231,7 +262,7 @@ h2.text-presentation, h2.text-contact{
 /*
     * Style media query pour 835px < écran < 1024px (all phones)
 */
-@media only screen and (min-width : 835px) and (max-width:1024px){
+@media only screen and (min-width : 835px) and (max-width:1025px){
     /* Styles pour cette Media Queries */
     #presentations, #contact{
         background-color: #6E6E6E;
