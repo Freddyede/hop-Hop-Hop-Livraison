@@ -16,15 +16,15 @@
             </p>
         </div>
         <div class="col-12 text-center">
-            <form method="POST" action="">
-                <div class="form-group row">
+            <form method="POST" action="" >
+                <div class="form-group row" id="select">
                     <div class="col-sm-6 text-center">
                         <p class="text-orange">
                             Habitez-vous en :
                         </p>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <select name="habitation" class="form-control">
+                        <select name="habitation" id="won" id="Habitation" class="form-control">
                             <option value="">--Please choose an option--</option>
                             <option value="Maison">Maison</option>
                             <option value="Appartement">Appartement</option>
@@ -56,6 +56,9 @@
                 </div>
                 <div class="col-12">
                     <p class="font-italic text-center">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin.</p>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-success mb-4" onclick="sendingData()">Success</button>
                 </div>
             </form>
         </div>
