@@ -5,7 +5,7 @@ function sendingData(){
             $("#phone").removeClass("error");
         }
         $(document).ready(function() {
-            let Habitation = $("#Habitation").val();
+            let Habitation = $("#commande_forms_residences").val();
             let phone =  parseInt($("#phone").val());
             let city = $("#city").val();
             console.log(Habitation);

@@ -24,11 +24,7 @@
                         </p>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <select name="habitation" id="won" id="Habitation" class="form-control">
-                            <option value="">--Please choose an option--</option>
-                            <option value="Maison">Maison</option>
-                            <option value="Appartement">Appartement</option>
-                        </select>
+                        {{ form_widget(forms.residences, { 'attr': {'class': 'form-control'} }) }}
                     </div>
                 </div>
                 <div class="form-group row">

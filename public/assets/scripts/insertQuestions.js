@@ -1,7 +1,6 @@
-$(document).on('change','#won',function(){
-    var containerQuestions = $("#next-questions");
+$(document).on('change','#commande_forms_residences',function(){
     var containerAllQuestions= $("#select");
-    if($('#won').val() === 'Appartement'){
+    if($('#commande_forms_residences').val() === 'Appartements'){
         containerAllQuestions.after(`
             <div class="form-group row" id="otherQuestions">
                 <div class="col-sm-6 col-lg-6 text-center">
