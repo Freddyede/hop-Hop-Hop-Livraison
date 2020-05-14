@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Commande
  *
- * @ORM\Table(name="commande", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_6EEAA67DB2B59251", columns={"code_postal_id"})})
+ * @ORM\Table(name="commande")
  * @ORM\Entity
  */
 class Commande
@@ -31,21 +33,21 @@ class Commande
     /**
      * @var bool
      *
-     * @ORM\Column(name="ascenseurs", type="boolean", nullable=false)
+     * @ORM\Column(name="ascenseurs", type="boolean", nullable=true)
      */
     private $ascenseurs;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="digicode", type="boolean", nullable=false)
+     * @ORM\Column(name="digicode", type="boolean", nullable=true)
      */
     private $digicode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="number_digicodes", type="string", length=255, nullable=false)
+     * @ORM\Column(name="number_digicodes", type="string", length=255, nullable=true)
      */
     private $numberDigicodes;
 
@@ -57,14 +59,19 @@ class Commande
     private $tel;
 
     /**
-     * @var \Villes
-     *
-     * @ORM\ManyToOne(targetEntity="Villes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="code_postal_id", referencedColumnName="id")
-     * })
+     * @ORM\ManyToMany(targetEntity="App\Entity\Villes", inversedBy="commandes")
      */
-    private $codePostal;
+    private $id_villes;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $etage;
+
+    public function __construct()
+    {
+        $this->id_villes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -131,17 +138,40 @@ class Commande
         return $this;
     }
 
-    public function getCodePostal(): ?Villes
+    /**
+     * @return Collection|Villes[]
+     */
+    public function getIdVilles(): Collection
     {
-        return $this->codePostal;
+        return $this->id_villes;
     }
 
-    public function setCodePostal(?Villes $codePostal): self
+    public function addIdVille(Villes $idVille): self
     {
-        $this->codePostal = $codePostal;
+        if (!$this->id_villes->contains($idVille)) {
+            $this->id_villes[] = $idVille;
+        }
 
         return $this;
     }
 
+    public function removeIdVille(Villes $idVille): self
+    {
+        if ($this->id_villes->contains($idVille)) {
+            $this->id_villes->removeElement($idVille);
+        }
+        return $this;
+    }
 
+    public function getEtage(): ?string
+    {
+        return $this->etage;
+    }
+
+    public function setEtage(?string $etage): self
+    {
+        $this->etage = $etage;
+
+        return $this;
+    }
 }

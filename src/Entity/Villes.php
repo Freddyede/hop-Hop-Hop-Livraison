@@ -2,13 +2,15 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Villes
  *
  * @ORM\Table(name="villes", indexes={@ORM\Index(name="IDX_19209FD89F2C3FAB", columns={"zone_id"})})
- * @ORM\Entity
+ * @ORM\Entity()
  */
 class Villes
 {
@@ -44,6 +46,16 @@ class Villes
      * })
      */
     private $zone;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Commande", mappedBy="id_villes")
+     */
+    private $commandes;
+
+    public function __construct()
+    {
+        $this->commandes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,5 +98,34 @@ class Villes
         return $this;
     }
 
+    public function __toString() {
+        return $this->name;
+    }
 
+    /**
+     * @return Collection|Commande[]
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commande $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->addIdVille($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commande $commande): self
+    {
+        if ($this->commandes->contains($commande)) {
+            $this->commandes->removeElement($commande);
+            $commande->removeIdVille($this);
+        }
+        return $this;
+    }
 }

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppointController!{% endblock %}
+{% block contentTitle %}
+    <div class="row containerTitle" id="contact">
+        <div class="col-12">
+            <h2 class="text-center text-contact">Prise Rdv :</h2>
+        </div>
+    </div>
+{% endblock %}
+{% block contentBody %}
+    <div class="row">
+        <div class="col-12 text-center">
+            <p class="font-italic text-center">
+                Pour une livraison à domicile merci de remplir le formulaire ci-dessous.
+            </p>
+        </div>
+        <div class="col-12 text-center">
+            <form method="POST" action="">
+                <div class="form-group row" id="select">
+                    <div class="col-sm-6 text-center">
+                        <p class="text-orange">
+                            Habitez-vous en :
+                        </p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        {{ form_widget(forms.residences, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 text-center">
+                        <p class="text-orange">
+                            Téléphone :
+                        </p>
+                    </div>
+                    <div class="col-sm-6 text-left">
+                        <input id="phone" 
+                            type="number" class="form-control" 
+                            name="phone" min="0"/>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="font-italic text-center">
+                        Afin de choisir le jour de votre livraison, entrez le code postal de votre habitation, vous serez alors dirigé vers le jour prévus selon votre secteur
+                    </p>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 text-center">
+                        <input id="city" 
+                            type="text" class="form-control" name="citys"/>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="font-italic text-center">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin.</p>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-success mb-4" onclick="sendingData()">Success</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
