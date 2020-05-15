@@ -2,7 +2,7 @@ $(document).ready(function (){
     $(".form-sending").hide();
 });
 function sendingData(){
-    let regex = /^(0[1-68])(?:[ _.-]?(\d{2})){4}$/;
+    let regex = /^(06|07)[0-9]{8}$/;
     let regexEtage = /^[0-9]$/;
     let phone = $("#phone");
     let etage = $("#etages");
