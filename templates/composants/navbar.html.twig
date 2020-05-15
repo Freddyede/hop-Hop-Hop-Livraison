@@ -28,6 +28,15 @@
                                 <li>
                                     <a role="menuitem" href="{{ path('contact') }}">Contact</a>
                                 </li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li class="d-lg-none hidden-xl">
+                                        <a href="{{path('french_rdv')}}">Logout</a>
+                                    </li>
+                                {% else %}
+                                    <li class="d-lg-none hidden-xl">
+                                        <a href="{{path('french_rdv')}}">Login</a>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </nav>
                     </div>

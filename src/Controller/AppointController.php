@@ -35,21 +35,22 @@ class AppointController extends AbstractController
      * @return Response
      */
     public function getData(Request $request){
-        $logement = $request->request->get('logement');
+        $logement = trim(htmlspecialchars(htmlentities($request->request->get('logement'))));
         $hasDigicode = null;
         $codeDigicode = null;
         $etage = null;
         $ascenseur = null;
         $hasDigicode = null;
         $codeDigicode = null;
-        $tel = $request->request->get('tel');
+        $tel = (htmlentities($request->request->get('tel')));
+        $ajaxVille = trim(htmlspecialchars(htmlentities($request->request->get('villes'))));
         if($logement === 'Appartements') {
-            $etage = $request->request->get('etage');
-            $ascenseur = $request->request->get('codeDigicode');
-            $hasDigicode = $request->request->get('hasDigicode');
-            $codeDigicode = $request->request->get('codeDigicode');
+            $etage = trim(htmlspecialchars(htmlentities($request->request->get('etage'))));
+            $ascenseur = trim(htmlspecialchars(htmlentities($request->request->get('codeDigicode'))));
+            $hasDigicode = trim(htmlspecialchars(htmlentities($request->request->get('hasDigicode'))));
+            $codeDigicode = trim(htmlspecialchars(htmlentities($request->request->get('codeDigicode'))));
         }
-        $villes = explode(" ", $request->request->get('villes'));
+        $villes = explode(" ", $ajaxVille);
         $objVilles = null;
         foreach ($villes as $ville){
             if(preg_match('/^[0-9]{5}$/',$ville, $matches)){

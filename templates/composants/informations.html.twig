@@ -23,6 +23,21 @@
                                 </button>
                             </a>
                         </div>
+                        <div>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{path('app_logout')}}">
+                            <button type="button" class="btn btn-danger">
+                                Logout
+                            </button>
+                            </a>
+                        {% else %}
+                            <a href="{{path('app_login')}}">
+                                <button type="button" class="btn btn-success">
+                                    Login
+                                </button>
+                            </a>
+                        {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>

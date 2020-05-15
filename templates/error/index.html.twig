@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block contentBody %}
+<h1>Page not found</h1>
+    <h2>Vous serez redirigé dans <span class="redirect-timer"></span> <span class="secondes"></span>.</h2>
+<div class="compteur"></div>
+<script>
+    var count = 10; /* secondes */
+    var redirect = "https://localhost:8000/"; /* where you'll be redirected */
+
+    function countdown(){
+        if(count > 0){
+            $('.redirect-timer').text(count);
+            if(count > 1){
+                $('.secondes').text('secondes');
+            }else {
+                $('.secondes').text('seconde');
+            }
+            setTimeout("countdown()", 1000);
+            count--;
+        }else{
+            window.location.href = redirect;
+        }
+    }
+
+    $(window).on('load', function () {
+        countdown();
+    });
+</script>
+{% endblock %}
