@@ -14,7 +14,9 @@ class ErrorController extends AbstractController
     {
         return $this->render('error/index.html.twig', [
             'controller_name' => 'ErrorController',
-            'activePresentations'=>false
+            'activePresentations'=>false,
+            'liens'=>false,
+            'liens2'=>'error',
         ]);
     }
 }

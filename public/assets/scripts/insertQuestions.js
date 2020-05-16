@@ -21,13 +21,13 @@ $(document).on('change','#commande_forms_residences',function(){
                     <div class="row">
                         <div class="col-sm-6">
                             <input class="form-check-input" type="radio" name="ascenseur" id="ascenseur" value="true" />
-                            <label class="form-check-label" for="exampleRadios1">
+                            <label class="form-check-label text-orange" for="exampleRadios1">
                                 Oui
                             </label>
                         </div>
                         <div class="col-sm-6">
                             <input class="form-check-input" type="radio" name="ascenseur" id="ascenseur" value="false" />
-                            <label class="form-check-label" for="exampleRadios1">
+                            <label class="form-check-label text-orange" for="exampleRadios1">
                                 Non
                             </label>
                         </div>
@@ -44,13 +44,13 @@ $(document).on('change','#commande_forms_residences',function(){
                     <div class="row">
                         <div class="col-sm-6">
                             <input class="form-check-input" type="radio" name="digicodeGood" id="digicodeGood" value="true" />
-                            <label class="form-check-label" for="exampleRadios1">
+                            <label class="form-check-label text-orange" for="exampleRadios1">
                                 Oui
                             </label>
                         </div>
                         <div class="col-sm-6">
                             <input class="form-check-input" type="radio" name="digicodeGood" id="digicodeGood" value="false" />
-                            <label class="form-check-label" for="exampleRadios1">
+                            <label class="form-check-label text-orange" for="exampleRadios1">
                                 Non
                             </label>
                         </div>

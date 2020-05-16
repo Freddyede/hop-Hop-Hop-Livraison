@@ -35,6 +35,9 @@
         <script src="{{asset('assets/scripts/addError.js')}}"></script>
         <script src="{{asset('assets/scripts/sending.js')}}"></script>
         <script src="{{asset('assets/scripts/sendData.js')}}"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     </head>
 
@@ -50,15 +53,16 @@
                 {% include 'composants/navbar.html.twig'%}
                 <div class="container">
                     {% block contentTitle %}
+
                         {% if activePresentations %}
-                            <div class="row" id="presentations">
-                                <div class="col-10 offset-1">
-                                    <h2 class="text-presentation text-center">
+                            <div class="row">
+                                <div class="col-10 offset-1" id="presentations">
+                                    <h2 class="text-orange f-large f-weight text-center">
                                         <ins>
                                             Présentations Entreprise :
                                         </ins>
                                     </h2>
-                                    <p class="text-presentation text-center text-presentations">
+                                    <p class="text-presentation text-center f-large f-weight f-shadow text-orange">
                                         Hop ! Hop ! Hop ! Livraison est, comme son nom l'indique, une société de
                                         livraison fondée en Août 2019. Notre entreprise familiale propose différents
                                         services grâce à sa flotte élargie de véhicules légers allant de la voiture au
@@ -80,7 +84,7 @@
         <!-- slider_area_start -->
         <div class="slider_area" id="headerwrap">
             <div class="col-xs-12">
-                <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+                <div class="single_slider  d-flex align-items-center {% if liens is same as(true)  %}slider_bg_2{% else %}headerwrap2{% endif %} overlay2">
                 </div>
             </div>
         </div>

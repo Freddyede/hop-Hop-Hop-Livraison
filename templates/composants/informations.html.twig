@@ -1,45 +1,43 @@
 <div class="header-top_area d-none d-lg-block main-header-area main-header-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-sm-6">
                 <h1 class="text-orange">
-                    Hop Hop Hop Livraison
+                    <span class="titre">Hop Hop Hop</span> <span class="titre2">Livraison</span>
                 </h1>
             </div>
-            <div class="col-md-7 text-white">
-                <div class="row">
-                    <div class="containerWrapper col-md-12">
-                        <div>
-                            <a href="{{path('french_rdv')}}">
-                                <button type="button" class="btn btn-outline-light">
-                                    <i class="fas fa-calendar-alt"></i> Prise Rdv
-                                </button>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="{{path('devis')}}">
-                                <button type="button" class="btn btn-orange">
-                                    Demandez un devis
-                                </button>
-                            </a>
-                        </div>
-                        <div>
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a href="{{path('app_logout')}}">
-                            <button type="button" class="btn btn-danger">
-                                Logout
-                            </button>
-                            </a>
-                        {% else %}
-                            <a href="{{path('app_login')}}">
-                                <button type="button" class="btn btn-success">
-                                    Login
-                                </button>
-                            </a>
-                        {% endif %}
-                        </div>
-                    </div>
+            <div class="col-sm-6 text-white containerAllWrapper">
+                <div>
+                    <a href="{{path('french_rdv')}}">
+                        <button type="button" class="btn btn-outline-light">
+                            <i class="fas fa-calendar-alt"></i> Prise Rdv
+                        </button>
+                    </a>
                 </div>
+                <div>
+                    <a href="{{path('devis')}}">
+                        <button type="button" class="btn btn-orange">
+                            Demandez un devis
+                        </button>
+                    </a>
+                </div>
+                {% if liens2 is not same as('login') and liens2 is not same as('register') %}
+                <div>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
+                    <a href="{{path('app_login')}}">
+                        <button type="button" class="btn btn-success">
+                            Connexion
+                        </button>
+                    </a>
+                    {% else %}
+                        <a href="{{path('app_logout')}}">
+                            <button type="button" class="btn btn-danger">
+                                Déconnexion
+                            </button>
+                        </a>
+                    {% endif %}
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

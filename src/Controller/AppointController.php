@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\CommandeFormsType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
  * @Route("/fr")
@@ -24,6 +25,8 @@ class AppointController extends AbstractController
         $forms = $this->createForm(CommandeFormsType::class, $commande);
         return $this->render('appoint/index.html.twig', [
             'controller_name' => 'AppointController',
+            'liens'=>false,
+            'liens2'=>'appoint',
             'activePresentations'=>false,
             'forms'=>$forms->createView()
         ]);
@@ -32,9 +35,12 @@ class AppointController extends AbstractController
     /**
      * @Route("/appoint/getData", name="getDataToSendingIntoBdd")
      * @param Request $request
+     * @param TokenStorageInterface $tokenStorage
      * @return Response
      */
-    public function getData(Request $request){
+    public function getData(Request $request,TokenStorageInterface $tokenStorage){
+        $user = $tokenStorage->getToken()->getUser();
+        var_dump($user);
         $logement = trim(htmlspecialchars(htmlentities($request->request->get('logement'))));
         $hasDigicode = null;
         $codeDigicode = null;

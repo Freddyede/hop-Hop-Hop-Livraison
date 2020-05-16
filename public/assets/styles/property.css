@@ -1,6 +1,36 @@
+body{
+    font-family: 'Bree Serif', serif;
+}
+
+.menu{
+    font-family: 'Bree Serif', serif;
+}
+
+.titre{
+    font-family: 'Faster One', cursive;
+}
+
+.titre2{
+    font-family: 'Vast Shadow', cursive;
+    font-style: italic;
+}
+
 .text-orange{
     color:#FF7F00 !important;
 }
+
+.f-weight{
+    font-weight: bold;
+}
+
+.f-large{
+    font-size: 1.1rem;
+}
+
+.f-shadow{
+    box-shadow: 1px 1px 1px #000;
+}
+
 .text-area{
     width: 300px;
 }
@@ -22,10 +52,6 @@ input[type=number]  {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   margin: 0;
-}
-#headerwrap{
-    background-image: url(../img/background.jpg) no-repeat !important;
-    background-size: cover;
 }
 
 #navbar{
@@ -87,7 +113,9 @@ input[type=number]  {
     background-image: none;
     border-radius: 4px;
 }
-
+.headerwrap2{
+    background-color: #343438;
+}
 .flexContainer{
     display: flex;
     justify-content: space-around;
@@ -126,10 +154,10 @@ input[type=number]  {
     color:#fff !important;
 }
 
-.containerWrapper{
+.containerAllWrapper{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-self: center;
 }
 a#contacts{
     cursor: pointer;
@@ -140,16 +168,12 @@ div#contacts{
 }
 
 #presentations, #contact{
-    background-color: #6E6E6E;
+    background-color: none;
 }
 
 .text-presentations{
     font-size:1rem;
     font-family: 'Times New Roman', Times, serif;
-}
-.text-presentation, .text-contact{
-    color:#048b9a;
-    text-shadow: 1px 1px 1px #000;
 }
 
 h2.text-presentation, h2.text-contact{
@@ -158,12 +182,6 @@ h2.text-presentation, h2.text-contact{
 
 .text-under{
     text-decoration: underline;
-}
-
-/**     CONTAINER TITLE **/
-
-.containerTitle{
-    margin-top: 30%;
 }
 
 .password_lost{
@@ -179,7 +197,15 @@ h2.text-presentation, h2.text-contact{
     * Style media query pour écran < 359px (all small phones (iphone 5SE and others) )
 */
 @media only screen and (max-width : 359px) {
+    .headerwrap2{
+        background-color: #343438;
+    }
     /* Styles pour cette Media Queries */
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
     #presentations {
         height:458px;
         overflow: hidden;
@@ -192,8 +218,13 @@ h2.text-presentation, h2.text-contact{
     .password_lost:active {
         color:#00f;
     }
-    .containerTitle{
+    .containerTitle {
         margin-top: 30%;
+    }
+    .containerAllWrapper{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
     }
     .text-presentations{
         font-size:1rem;
@@ -206,13 +237,23 @@ h2.text-presentation, h2.text-contact{
     * Style media query pour 359px < écran < 361px (all phones)
 */
 @media only screen and (min-width : 359px) and (max-width:361px){
-    /* Styles pour cette Media Queries */
-    #presentations, #contact{
-        background-color: #6E6E6E;
+    .headerwrap2 {
+        background-color: #343438;
     }
+    /* Styles pour cette Media Queries */
     .password_lost{
         text-decoration: underline;
         color:#00f;
+    }
+    .containerAllWrapper{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+    }
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
     }
     .password_lost:active {
         color:#00f;
@@ -234,8 +275,19 @@ h2.text-presentation, h2.text-contact{
 */
 @media only screen and (min-width : 362px) and (max-width:768px){
     /* Styles pour cette Media Queries */
-    #presentations, #contact{
-        background-color: #6E6E6E;
+
+    .headerwrap2{
+        background-color: #343438;
+    }
+    .containerAllWrapper{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+    }
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 
     .containerTitle{
@@ -266,8 +318,19 @@ h2.text-presentation, h2.text-contact{
 
 @media only screen and (min-width : 769px) and (max-width:834px){
     /* Styles pour cette Media Queries */
-    #presentations, #contact{
-        background-color: #6E6E6E;
+
+    .headerwrap2{
+        background-color: #343438;
+    }
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .containerAllWrapper{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
     }
     .password_lost{
         text-decoration: underline;
@@ -292,8 +355,19 @@ h2.text-presentation, h2.text-contact{
 */
 @media only screen and (min-width : 835px) and (max-width:1025px){
     /* Styles pour cette Media Queries */
-    #presentations, #contact{
-        background-color: #6E6E6E;
+
+    .headerwrap2{
+        background-color: #343438;
+    }
+    #presentations {
+        height:458px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .containerAllWrapper{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
     }
     .password_lost{
         text-decoration: underline;

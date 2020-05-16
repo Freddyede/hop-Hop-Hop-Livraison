@@ -18,7 +18,9 @@ class DevisController extends AbstractController
     {
         return $this->render('devis/index.html.twig', [
             'controller_name' => 'DevisController',
-            'activePresentations'=>false
+            'activePresentations'=>false,
+            'liens'=>false,
+            'liens2'=>'devis',
         ]);
     }
 }

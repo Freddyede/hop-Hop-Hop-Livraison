@@ -2,16 +2,14 @@
 
 {% block title %}Hello AppointController!{% endblock %}
 {% block contentTitle %}
-    <div class="row containerTitle" id="contact">
+    <div class="row" id="contact">
         <div class="col-12">
-            <h2 class="text-center text-contact">Prise Rdv :</h2>
+            <h2 class="text-center text-contact text-orange">Prise Rdv :</h2>
         </div>
     </div>
-{% endblock %}
-{% block contentBody %}
     <div class="row">
         <div class="col-12 text-center">
-            <p class="font-italic text-center">
+            <p class="font-italic text-center text-orange">
                 Pour une livraison à domicile merci de remplir le formulaire ci-dessous.
             </p>
         </div>
@@ -40,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <p class="font-italic text-center">
+                    <p class="font-italic text-center text-orange">
                         Afin de choisir le jour de votre livraison, entrez le code postal de votre habitation, vous serez alors dirigé vers le jour prévus selon votre secteur
                     </p>
                 </div>
@@ -51,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <p class="font-italic text-center">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin.</p>
+                    <p class="font-italic text-center text-orange">Dans le cas ou il reste un solde à payer, prévoir un chèque à l'ordre du magasin.</p>
                 </div>
                 <div class="col-12">
                     <button type="button" class="btn btn-success mb-4" onclick="sendingData()">Success</button>

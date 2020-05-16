@@ -30,6 +30,9 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
+                'label_attr'=>[
+                    'class'=>'text-orange',
+                ]
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

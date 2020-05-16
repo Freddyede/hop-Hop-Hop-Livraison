@@ -35,6 +35,11 @@ class User implements UserInterface
      */
     public $password;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="client")
+     */
+    private $commande;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -110,5 +115,17 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->commande;
+    }
+
+    public function setCommande(?Commande $commande): self
+    {
+        $this->commande = $commande;
+
+        return $this;
     }
 }

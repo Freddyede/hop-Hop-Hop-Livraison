@@ -14,7 +14,9 @@ class ContactController extends AbstractController
     {
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
-            'activePresentations'=>false
+            'activePresentations'=>false,
+            'liens'=>false,
+            'liens2'=>'contact',
         ]);
     }
 }

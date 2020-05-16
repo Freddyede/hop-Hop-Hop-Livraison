@@ -4,7 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-md-1 text-center">
                     <a href="{{path('home')}}">
-                        <h1 class="text-orange">
+                        <h1 class="text-orange titre">
                             HHHL
                         </h1>
                     </a>
@@ -14,29 +14,23 @@
                         <nav>
                             <ul id="navigation">
                                 <li>
-                                    <a role="menuitem" href="{{path('home')}}">Présentation</a>
+                                    <a role="menuitem" class="menu" href="{{path('home')}}">Présentation</a>
                                 </li>
                                 <li>
-                                    <a role="menuitem" href="about.html">Transports</a>
+                                    <a role="menuitem" class="menu" href="about.html">Transports</a>
                                 </li>
                                 <li>
-                                    <a role="menuitem" href="service.html">Services</a>
+                                    <a role="menuitem" class="menu" href="service.html">Services</a>
                                 </li>
                                 <li class="d-lg-none hidden-xl">
-                                    <a href="{{path('french_rdv')}}">Prise Rdv</a>
+                                    <a class="menu" href="{{path('french_rdv')}}">Prise Rdv</a>
+                                </li>
+                                <li class="d-lg-none hidden-xl">
+                                    <a class="menu" href="{{path('french_rdv')}}">Prise Rdv</a>
                                 </li>
                                 <li>
-                                    <a role="menuitem" href="{{ path('contact') }}">Contact</a>
+                                    <a class="menu" role="menuitem" href="{{ path('contact') }}">Contact</a>
                                 </li>
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                    <li class="d-lg-none hidden-xl">
-                                        <a href="{{path('french_rdv')}}">Logout</a>
-                                    </li>
-                                {% else %}
-                                    <li class="d-lg-none hidden-xl">
-                                        <a href="{{path('french_rdv')}}">Login</a>
-                                    </li>
-                                {% endif %}
                             </ul>
                         </nav>
                     </div>

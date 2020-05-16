@@ -68,9 +68,15 @@ class Commande
      */
     private $etage;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="commande")
+     */
+    private $client;
+
     public function __construct()
     {
         $this->id_villes = new ArrayCollection();
+        $this->client = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -171,6 +177,36 @@ class Commande
     public function setEtage(?string $etage): self
     {
         $this->etage = $etage;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getClient(): Collection
+    {
+        return $this->client;
+    }
+
+    public function addClient(User $client): self
+    {
+        if (!$this->client->contains($client)) {
+            $this->client[] = $client;
+            $client->setCommande($this);
+        }
+        return $this;
+    }
+
+    public function removeClient(User $client): self
+    {
+        if ($this->client->contains($client)) {
+            $this->client->removeElement($client);
+            // set the owning side to null (unless already changed)
+            if ($client->getCommande() === $this) {
+                $client->setCommande(null);
+            }
+        }
 
         return $this;
     }
