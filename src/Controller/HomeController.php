@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Providers;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Villes;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,9 +15,11 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        $providers = $this->getDoctrine()->getRepository(Providers::class)->findAll();
         return $this->render('base.html.twig', [
             'controller_name' => 'HomeController',
             'liens'=>true,
+            'providers'=>$providers,
             'liens2'=>'home',
             'activePresentations'=>true
         ]);

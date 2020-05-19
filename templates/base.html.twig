@@ -37,7 +37,8 @@
         <script src="{{asset('assets/scripts/sendData.js')}}"></script>
         <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     </head>
 
@@ -57,12 +58,12 @@
                         {% if activePresentations %}
                             <div class="row">
                                 <div class="col-10 offset-1" id="presentations">
-                                    <h2 class="text-orange f-large f-weight text-center">
+                                    <h2 class="text-orange text-satisfy-title f-shadow f-weight text-center">
                                         <ins>
                                             Présentations Entreprise :
                                         </ins>
                                     </h2>
-                                    <p class="text-presentation text-center f-large f-weight f-shadow text-orange">
+                                    <p class="text-presentation text-center text-satisfy f-weight f-shadow text-orange">
                                         Hop ! Hop ! Hop ! Livraison est, comme son nom l'indique, une société de
                                         livraison fondée en Août 2019. Notre entreprise familiale propose différents
                                         services grâce à sa flotte élargie de véhicules légers allant de la voiture au
@@ -100,77 +101,28 @@
             <div class="footer_top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget">
-                                <div class="footer_logo">
-                                    <a href="#">
-                                        <img src="{{asset('assets/img/footer_logo.png')}}" alt="">
-                                    </a>
+                        <div class="col-sm-6 col-md-6 col-12">
+                            <form class="text-center">
+                                <div class="form-group">
+                                    <div class="col-12 mb-2 text-center">
+                                        <i class="far fa-star fa-2x text-orange"></i>
+                                        <i class="far fa-star fa-2x text-orange"></i>
+                                        <i class="far fa-star fa-2x text-orange"></i>
+                                        <i class="far fa-star fa-2x text-orange"></i>
+                                        <i class="far fa-star fa-2x text-orange"></i>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <textarea name="comments" class="comment text-center" placeholder="Commentaires"></textarea>
+                                    </div>
                                 </div>
-                                <p>
-                                    Firmament morning sixth subdue darkness
-                                    creeping gathered divide.
-                                </p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
+                                <button class="btn btn-success">Envoyer</button>
+                            </form>
                         </div>
-                        <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        Services
-                                </h3>
-                                <ul>
-                                    <li><a href="#">Design</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Marketing</a></li>
-                                    <li><a href="#">Consulting</a></li>
-                                    <li><a href="#">Finance</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        Useful Links
-                                </h3>
-                                <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#"> Contact</a></li>
-                                    <li><a href="#"> Free quote</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Address
-                                </h3>
-                                <ul>
-                                        <li>200, D-block, Green lane USA</li>
-                                        <li>+10 367 467 8934</li>
-                                        <li><a href="#"> docmed@contact.com</a></li>
-                                    </ul>
+                        <div class="col-sm-6 col-md-6 col-12">
+                            <div class="row">
+                                {% for provider in providers %}
+                                    <img src="{{ provider.logo }}" class="imgs" alt="">
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

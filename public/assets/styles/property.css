@@ -2,8 +2,8 @@ body{
     font-family: 'Bree Serif', serif;
 }
 
-.menu{
-    font-family: 'Bree Serif', serif;
+.comment {
+    width:100%;
 }
 
 .titre{
@@ -23,12 +23,30 @@ body{
     font-weight: bold;
 }
 
-.f-large{
-    font-size: 1.1rem;
+.containerWrapperLogo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.f-shadow{
-    box-shadow: 1px 1px 1px #000;
+.text-satisfy{
+    font-family: 'Katibeh', cursive;
+    font-size: 25px !important;
+}
+
+.imgs{
+    display: block;
+    width:100px;
+    height:100px;
+}
+
+.text-satisfy-title{
+    font-family: 'Katibeh', cursive;
+    font-size: 40px !important;
+}
+
+.f-shadow {
+    text-shadow: 1px 1px 1px #000;
 }
 
 .text-area{

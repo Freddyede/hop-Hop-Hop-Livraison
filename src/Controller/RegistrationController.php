@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Providers;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,11 +45,13 @@ class RegistrationController extends AbstractController
 
             return $this->redirect('/login');
         }
+        $providers = $this->getDoctrine()->getRepository(Providers::class)->findAll();
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
             'activePresentations'=>false,
             'liens'=>false,
+            'providers'=>$providers,
             'liens2'=>'register',
         ]);
     }

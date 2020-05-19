@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Providers;
 use LogicException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,12 +21,14 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+        $providers = $this->getDoctrine()->getRepository(Providers::class)->findAll();
 
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
             'activePresentations'=>false,
             'liens'=>false,
+            'providers'=>$providers,
             'liens2'=>'login'
         ]);
     }

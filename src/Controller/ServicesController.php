@@ -6,24 +6,20 @@ use App\Entity\Providers;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-    /**
-     * @Route("/fr")
-    */
-class DevisController extends AbstractController
+class ServicesController extends AbstractController
 {
     /**
-     * @Route("/devis", name="devis")
+     * @Route("/services", name="services")
      */
     public function index()
     {
         $providers = $this->getDoctrine()->getRepository(Providers::class)->findAll();
-        return $this->render('devis/index.html.twig', [
-            'controller_name' => 'DevisController',
+        return $this->render('services/index.html.twig', [
+            'controller_name' => 'ServicesController',
             'activePresentations'=>false,
-            'providers'=>$providers,
             'liens'=>false,
-            'liens2'=>'devis',
+            'providers'=>$providers,
+            'liens2'=>'transports'
         ]);
     }
 }
