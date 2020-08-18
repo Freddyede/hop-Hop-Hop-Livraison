@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm-6 text-white containerAllWrapper">
                 <div>
-                    <a href="{{path('french_rdv')}}">
+                    <a href="{{path('app_login')}}">
                         <button type="button" class="btn btn-outline-light">
                             <i class="fas fa-calendar-alt"></i> Prise Rdv
                         </button>
@@ -21,22 +21,22 @@
                         </button>
                     </a>
                 </div>
-                {% if liens2 is not same as('login') and liens2 is not same as('register') %}
-                <div>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
-                    <a href="{{path('app_login')}}">
-                        <button type="button" class="btn btn-success">
-                            Connexion
-                        </button>
-                    </a>
-                    {% else %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <div>
                         <a href="{{path('app_logout')}}">
                             <button type="button" class="btn btn-danger">
                                 Déconnexion
                             </button>
                         </a>
-                    {% endif %}
-                </div>
+                    </div>
+                {% else %}
+                    <div>
+                        <a href="{{path('contact')}}">
+                            <button type="button" class="btn btn-success">
+                                Contact
+                            </button>
+                        </a>
+                    </div>
                 {% endif %}
             </div>
         </div>

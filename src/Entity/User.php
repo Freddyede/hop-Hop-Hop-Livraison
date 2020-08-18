@@ -38,7 +38,7 @@ class User implements UserInterface
     public $password;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="client")
+     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="client")
      */
     private $commande;
 
@@ -51,6 +51,11 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Comments", mappedBy="user_id")
      */
     private $comments;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $phone;
 
     public function __construct()
     {
@@ -180,6 +185,18 @@ class User implements UserInterface
                 $comment->setUserId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }
