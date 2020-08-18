@@ -69,7 +69,7 @@ class Commande
     private $etage;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="commande")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commande")
      */
     private $client;
 

@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
-use App\Entity\Providers;
 use App\Entity\Villes;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,13 +23,10 @@ class AppointController extends AbstractController
     {
         $commande = new Commande();
         $forms = $this->createForm(CommandeFormsType::class, $commande);
-        $providers = $this->getDoctrine()->getRepository(Providers::class)->findAll();
         return $this->render('appoint/index.html.twig', [
             'controller_name' => 'AppointController',
             'liens'=>false,
             'liens2'=>'appoint',
-            'activePresentations'=>false,
-            'providers'=>$providers,
             'forms'=>$forms->createView()
         ]);
     }
