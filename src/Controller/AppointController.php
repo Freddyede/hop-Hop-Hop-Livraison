@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
+use App\Entity\User;
 use App\Entity\Villes;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\CommandeFormsType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
@@ -19,11 +21,13 @@ class AppointController extends AbstractController
     /**
      * @Route("/appoint", name="french_rdv")
      */
-    public function index()
+    public function index(AuthenticationUtils $authenticationUtils)
     {
         $commande = new Commande();
         $forms = $this->createForm(CommandeFormsType::class, $commande);
+        $tel = $this->getDoctrine()->getRepository(User::class)->findOneBy(['email'=>$authenticationUtils->getLastUsername()])->getPhone();
         return $this->render('appoint/index.html.twig', [
+            'tel'=>$tel,
             'controller_name' => 'AppointController',
             'liens'=>false,
             'liens2'=>'appoint',
