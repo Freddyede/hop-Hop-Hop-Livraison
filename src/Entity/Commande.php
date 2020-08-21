@@ -67,9 +67,10 @@ class Commande
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $etage;
+    private $Client;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commande")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commandes")
      */
     private $client;
 
@@ -77,6 +78,7 @@ class Commande
     {
         $this->id_villes = new ArrayCollection();
         $this->client = new ArrayCollection();
+        $this->Client = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -181,32 +183,13 @@ class Commande
         return $this;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getClient(): Collection
-    {
+    public function getClient() {
         return $this->client;
     }
 
-    public function addClient(User $client): self
+    public function setClient(?User $client): self
     {
-        if (!$this->client->contains($client)) {
-            $this->client[] = $client;
-            $client->setCommande($this);
-        }
-        return $this;
-    }
-
-    public function removeClient(User $client): self
-    {
-        if ($this->client->contains($client)) {
-            $this->client->removeElement($client);
-            // set the owning side to null (unless already changed)
-            if ($client->getCommande() === $this) {
-                $client->setCommande(null);
-            }
-        }
+        $this->client = $client;
 
         return $this;
     }

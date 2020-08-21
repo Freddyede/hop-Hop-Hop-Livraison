@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/fr")
@@ -50,8 +51,9 @@ class AppointController extends AbstractController
         $etage = null;
         $ascenseur = null;
         $hasDigicode = null;
+        $error = null;
         $codeDigicode = null;
-        $tel = (htmlentities($request->request->get('tel')));
+        $tel = trim(htmlspecialchars(htmlentities($request->request->get('tel'))));
         $ajaxVille = trim(htmlspecialchars(htmlentities($request->request->get('villes'))));
         if($logement === 'Appartements') {
             $etage = trim(htmlspecialchars(htmlentities($request->request->get('etage'))));
@@ -70,22 +72,29 @@ class AppointController extends AbstractController
         }
         $commande = new Commande();
         $em = $this->getDoctrine()->getManager();
-        if(!empty($logement) && !empty($tel)) {
+        if($logement === 'Maison' && !empty($tel)) {
             $commande->setResidences($logement)
                 ->setTel($tel)
+                ->setClient($this->getDoctrine()->getRepository(User::class)->findOneBy(['tel'=>$tel]))
                 ->addIdVille($objVilles);
+            $em->persist($commande);
+            $em->flush();
+            return new JsonResponse(['response' => 'Commande envoyé'], 200);
         }
-        if($logement === 'Appartements'){
+        if($logement === 'Appartements' && !empty($tel)){
             $commande->setResidences($logement)
                 ->setAscenseurs($ascenseur)
                 ->setEtage($etage)
                 ->setDigicode($hasDigicode)
                 ->setNumberDigicodes($codeDigicode)
+                ->setClient($this->getDoctrine()->getRepository(User::class)->findOneBy(['tel'=>$tel]))
                 ->setTel($tel)
                 ->addIdVille($objVilles);
+            $em->persist($commande);
+            $em->flush();
+            return new JsonResponse(['response' => 'Commande envoyé'], 200);
+        }else{
+            return new JsonResponse(['response' => 'Erreur Commande : Vérifier le champs les champs suivants :'.' '.$error], 404);
         }
-        $em->persist($commande);
-        $em->flush();
-        return new Response(true);
     }
 }

@@ -38,11 +38,6 @@ class User implements UserInterface
     public $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="client")
-     */
-    private $commande;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $username;
@@ -57,9 +52,15 @@ class User implements UserInterface
      */
     private $phone;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="client")
+     */
+    private $commandes;
+    
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->commandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,18 +140,6 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getCommande(): ?Commande
-    {
-        return $this->commande;
-    }
-
-    public function setCommande(?Commande $commande): self
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -201,4 +190,34 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @return Collection|Commande[]
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commande $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commande $commande): self
+    {
+        if ($this->commandes->contains($commande)) {
+            $this->commandes->removeElement($commande);
+            // set the owning side to null (unless already changed)
+            if ($commande->getClient() === $this) {
+                $commande->setClient(null);
+            }
+        }
+
+        return $this;
+    }
 }
